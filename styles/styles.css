@@ -1,0 +1,278 @@
+:root{
+    --font-family: "Nunito";
+    --color-red-x: #f76c6c;
+    --color-blue-o: #a8d0e6;
+}
+body{
+    font-family: var(--font-family);
+}
+button{
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container{
+    max-width: 800px;
+    margin-inline: auto;
+}
+
+.header{
+    background-color: #529cbe;
+    color: #fff;
+    margin-bottom: 100px;
+}
+
+.header__inner{
+    justify-content: center;
+    display: flex;
+    position: relative;
+}
+
+.header__text{
+    font-size: 50px;
+}
+
+.game__inner{
+    display: flex;
+    margin-inline: auto ;
+    flex-direction: column;
+    justify-content: center;
+    width: fit-content;
+}
+
+.game__heading{
+    text-align: center;
+    text-transform: uppercase;
+    color:var(--color-blue-o);
+    margin-bottom: 40px;
+}
+
+.game__heading span{
+    color: var(--color-red-x);
+}
+
+
+.game__blocks{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px;
+    margin-bottom: 40px;
+    transition: 0.4s;
+}
+
+.game__blocks.off{
+    transform: translateY(-100px);
+    transition: 0.4s;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.game__blocks-item{
+    padding: 0;
+    width: 100px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    transition: .3s;
+    color: #FFF;
+}
+
+.game__blocks-item.x{
+    background-color:var(--color-red-x);
+}
+
+.game__blocks-item.o{
+    background-color: var(--color-blue-o)
+}
+
+.game__blocks-item:not(.used):hover{
+    box-shadow: 0px 7px 12px 1px rgba(0, 0, 0, 0.349);
+}
+
+.win{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    display: none;
+}
+
+.win.active{
+    display: block;
+}
+
+.winner{
+    font-size: 25px;
+}
+
+.reset-btn{
+    display: flex;
+    width: fit-content;
+    padding-inline: 10px;
+    padding-block: 5px;
+    margin-inline:auto;
+    background-color: #529cbe;
+    color:#FFF;
+    transition: 0.3s; 
+    display: none;
+}
+
+.play-btn {
+    display: flex;
+    width: fit-content;
+    padding-inline: 10px;
+    padding-block: 5px;
+    margin-inline:auto;
+    background-color: #529cbe;
+    color:#FFF;
+    transition: 0.3s;
+    display: none;
+}
+
+.reset-btn:hover, .play-btn:hover{
+    box-shadow: 0px 7px 12px 1px rgba(0, 0, 0, 0.349);
+}
+.reset-btn.active, .play-btn.active{
+    display: block;
+}
+
+
+svg{
+    width: 100%;
+    display: none;
+    position: absolute;
+}
+
+svg.active{
+    display: block;
+}
+rect {
+    opacity: 0;
+}
+rect:nth-child(1) {
+    transform-origin: 45px 5px;
+    transform: rotate(-145deg);
+    animation: blast 700ms 2 ease-out;
+    animation-delay: 88ms;
+    animation-duration: 631ms;
+}
+rect:nth-child(2) {
+    transform-origin: 87px 5px;
+    transform: rotate(164deg);
+    animation: blast 700ms infinite ease-out;
+    animation-delay: 131ms;
+    animation-duration: 442ms;
+}
+rect:nth-child(3) {
+    transform-origin: 128px 6px;
+    transform: rotate(4deg);
+    animation: blast 700ms infinite ease-out;
+    animation-delay: 92ms;
+    animation-duration: 662ms;
+}
+rect:nth-child(4) {
+    transform-origin: 170px 6px;
+    transform: rotate(-175deg);
+    animation: blast 700ms infinite ease-out;
+    animation-delay: 17ms;
+    animation-duration: 593ms;
+}
+rect:nth-child(5) {
+    transform-origin: 213px 5px;
+    transform: rotate(-97deg);
+    animation: blast 700ms infinite ease-out;
+    animation-delay: 122ms;
+    animation-duration: 476ms;
+}
+rect:nth-child(6) {
+    transform-origin: 255px 6px;
+    transform: rotate(57deg);
+    animation: blast 700ms infinite ease-out;
+    animation-delay: 271ms;
+    animation-duration: 381ms;
+}
+rect:nth-child(7) {
+    transform-origin: 297px 5px;
+    transform: rotate(-46deg);
+    animation: blast 700ms infinite ease-out;
+    animation-delay: 131ms;
+    animation-duration: 619ms;
+}
+rect:nth-child(8) {
+    transform-origin: 338px 6px;
+    transform: rotate(-65deg);
+    animation: blast 700ms infinite ease-out;
+    animation-delay: 85ms;
+    animation-duration: 668ms;
+}
+rect:nth-child(9) {
+    transform-origin: 380px 6px;
+    transform: rotate(13deg);
+    animation: blast 700ms infinite ease-out;
+    animation-delay: 128ms;
+    animation-duration: 377ms;
+}
+rect:nth-child(10) {
+    transform-origin: 423px 5px;
+    transform: rotate(176deg);
+    animation: blast 700ms infinite ease-out;
+    animation-delay: 311ms;
+    animation-duration: 508ms;
+}
+rect:nth-child(11) {
+    transform-origin: 465px 5px;
+    transform: rotate(108deg);
+    animation: blast 700ms infinite ease-out;
+    animation-delay: 108ms;
+    animation-duration: 595ms;
+}
+rect:nth-child(12) {
+    transform-origin: 506px 6px;
+    transform: rotate(62deg);
+    animation: blast 700ms infinite ease-out;
+    animation-delay: 105ms;
+    animation-duration: 375ms;
+}
+rect:nth-child(13) {
+    transform-origin: 549px 5px;
+    transform: rotate(16deg);
+    animation: blast 700ms infinite ease-out;
+    animation-delay: 149ms;
+    animation-duration: 491ms;
+}
+rect:nth-child(odd) {
+    fill: #65BB5C;
+}
+rect:nth-child(even) {
+    z-index: 1;
+    fill: #33AAFF;
+}
+rect:nth-child(4n) {
+    animation-duration: 1400ms;
+    fill: #F23B14;
+}
+rect:nth-child(3n) {
+    animation-duration: 1750ms;
+    animation-delay: 700ms;
+}
+rect:nth-child(4n-7) {
+    fill: #2A2F6A;
+}
+rect:nth-child(6n) {
+    fill: #FBBA23;
+}
+
+@keyframes blast {
+    from {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    to {
+        transform: translateY(90px);
+    }
+}
